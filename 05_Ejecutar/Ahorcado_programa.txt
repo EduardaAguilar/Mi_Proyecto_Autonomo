@@ -1,0 +1,57 @@
+def jugar():
+
+    print("================================")
+    print("       JUEGO DEL AHORCADO")
+    print("================================")
+
+    nombre = input("Ingrese su nombre: ")
+
+    palabra = "PYTHON"
+    intentos = 6
+    progreso = ["_"] * len(palabra)
+
+    print("\nBienvenido", nombre)
+
+    while intentos > 0 and "_" in progreso:
+
+        print("\nPalabra:", " ".join(progreso))
+        print("Intentos restantes:", intentos)
+
+        letra = input("Ingrese una letra: ").upper()
+
+        if len(letra) != 1 or not letra.isalpha():
+            print("Ingrese solo una letra válida")
+            continue
+
+        encontrada = False
+
+        for i in range(len(palabra)):
+            if palabra[i] == letra:
+                progreso[i] = letra
+                encontrada = True
+
+        if encontrada:
+            print("✔ Correcta")
+        else:
+            print("✘ Incorrecta")
+            intentos -= 1
+
+    if "_" not in progreso:
+        print("\n🎉 Ganaste, felicidades", nombre)
+    else:
+        print("\n💀 Perdiste. La palabra era:", palabra)
+
+
+# -----------------------------
+# BUCLE DE REINICIO
+# -----------------------------
+
+while True:
+
+    jugar()
+
+    opcion = input("\n¿Quieres jugar otra vez? (s/n): ").lower()
+
+    if opcion != "s":
+        print("Gracias por jugar 👋")
+        break
