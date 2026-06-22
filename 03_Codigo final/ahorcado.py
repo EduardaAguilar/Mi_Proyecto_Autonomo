@@ -3,7 +3,8 @@
 # Asignatura: Lógica de Programación
 # Aprendizaje Autónomo 2
 # Proyecto: Juego del Ahorcado
-#
+# Estudiante: Eduarda Aguilar
+
 # Descripción:
 # El presente programa implementa una versión básica del juego
 # del ahorcado aplicando los conocimientos adquiridos sobre
